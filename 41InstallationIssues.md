@@ -1,29 +1,37 @@
-设施问题
+## 安装问题
 
-Llearn how to Handle issues issues during the facility process .
+了解如何解决安装过程中的PHP问题
 
-网页配置
+### PHP配置
 
-大多数时间设施问题都是有限资源的一部分，因为这是一个例证。如果需要的话，您应该检查和收缩，如果需要。
+大部分安装问题都是因为资源限制，比如在一个共享服务器上。如果需要的话，您应该检查[PHP配置设置](http://www.php.net/manual/en/ini.core.php)。
 
-简报
-在一个单一形式的材料中，在一个单单的数据中，最大值的最大值。
-在每一个个子中，每一个都是最大的。
-最大值的执行时间的时间时间在第二个脚本上，在您的停车场结束之前。
-Memory of memory of memory of memory in Byts that a smart is allowed to along .
-你可能需要更多的资源为更多的资源。如果这是不可能的，你可以通过A . H战术Setting on your WWSerVer .虽然这也是你的伺服伺服器，如果它允许使用。
+|设置|说明|
+|-------|-----------|
+|*post_max_size*|使用post方法在单个表单提交中数据的最大尺寸。|
+|*upload_max_filesize*|上载单个上载文件的最大文件大小。|
+|*max_execution_time*|在解析器终止脚本之前，允许脚本运行的最长执行时间（秒）。|
+|*memory_limit*|允许脚本分配的内存量（以字节为单位）。|
 
-通过PPP IN文件改变网页配置，使用后续同步。
+您可能需要通过直接修改*php.ini*文件为php分配更多的资源。如果不可能，可以尝试通过Web服务器上的 *.htaccess* 文件设置PHP设置。尽管这也取决于您的服务器是否允许使用 *.htaccess* 重写。
 
-重新设计的例子
-后的最大值
-最大值
-最大值执行时间
-Memory One LIT = 128M
-通过A . Hakacces file，Use the following Sootax。
+要通过php.ini文件更改php配置，请使用以下语法
 
-重新设计的例子
-本发明的价值最大值的最大值
-最大值的最大值
-在PlProf.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.UN.
-价值记忆存储器
+```
+# example of recommended settings
+post_max_size = 8M
+upload_max_filesize = 8M
+max_execution_time = 60
+memory_limit = 128M
+
+```
+
+使用*.htaccess* 文件设置时，使用以下语法
+
+```
+# example of recommended settings
+php_value post_max_size 8M
+php_value upload_max_filesize 8M
+php_value max_execution_time 60
+php_value memory_limit 128M
+```
